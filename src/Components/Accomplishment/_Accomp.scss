@@ -1,0 +1,113 @@
+@import '../../Theme/variables';
+
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .testimonialItem {
+    width: 80%;
+    min-height: 320px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.6s ease-in-out;
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testimonialContent {
+      flex: 1;
+      height: 100%;
+      padding: 2rem;
+      margin-left: 2rem;
+      border-radius: 20px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      background-color: #f3f3f3;
+
+      p {
+        font-size: 1.25rem;
+        line-height: 2rem;
+        color: #030303;
+      }
+
+      h4 {
+        font-weight: 600;
+        color: #313bac;
+        margin-top: 2rem;
+        font-size: 1em;
+        text-align: left;
+      }
+
+      h5 {
+        font-weight: 400;
+        color: #6b7688;
+        margin-top: 5px;
+        font-size: 0.8em;
+        text-align: left;
+        line-height: 1.5;
+      }
+
+      @media screen and (max-width: $breakpoints-sm) {
+        margin-top: 2rem;
+        padding: 1rem;
+      }
+    }
+
+    @media screen and (max-width: $breakpoints-md) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: $breakpoints-sm) {
+      flex-direction: column;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+  margin-top: 1rem;
+
+  div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFF;
+    margin: 1rem;
+    transition: all 0.6s ease-out;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: #313bac;
+    }
+
+    &:hover {
+      background: linear-gradient(270deg,#13ADC7 0%,#945DD6 100%);
+
+      svg {
+        color: #FFF;
+      }
+    }
+  }
+}

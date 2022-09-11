@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Route, Routes } from 'react-router-dom';
+import './App.scss';
+import Accomp from './Components/Accomplishment/Accomp';
+import BgAnimate from './Components/BgAnimate/BgAnimate';
+import Hero from './Components/Hero/Hero';
+import Projects from './Components/Projects/Projects';
+import Skill from './Components/Skills/Skill';
+import Tech from './Components/Technologies/Tech';
+import { Layout } from './Layout/Layout';
+import { Section } from './Theme/Globals';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    console.log("App");
+    return (
+        <div className="App">
+            <Layout>
+                <Routes>
+                    <Route path="/" element={ <>
+                        <Section grid>
+                            <Hero />
+                            <BgAnimate />
+                        </Section>
+                        <Projects />
+                        <Tech />
+                        <Skill />
+                        <Accomp />
+                    </> } />
+                </Routes>
+            </Layout>
+        </div>
   );
 }
 

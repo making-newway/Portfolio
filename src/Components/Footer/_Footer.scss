@@ -1,0 +1,192 @@
+@import '../../Theme/variables';
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100vw - 96px);
+  padding: 2rem 48px 40px;
+  margin: 1rem auto;
+  box-sizing: border-box;
+
+  .footerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    flex-direction: column;
+    margin: 3rem 2rem;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0.75rem 0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      input, textarea {
+        width: 100%;
+        padding: 0.95rem;
+        border: none;
+        border-radius: 7px;
+        background-color: #edf2f8;
+        color: #313bac;
+        outline: none;
+
+        @media screen and (max-width: $breakpoints-md) {
+          font-size: 14px;
+        }
+      }
+
+      textarea {
+        height: 170px;
+      }
+
+      &:hover {
+        box-shadow: 0 0 25px #edf2f8;
+      }
+    }
+
+    button {
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      border: none;
+      background-color: #2c75ff;
+      font-weight: 500;
+      color: #FFFFFF;
+      outline: none;
+      margin: 2rem 0 0 0;
+      transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      cursor: pointer;
+
+      &:hover {
+        background-color: #035096;
+      }
+    }
+
+    @media screen and (max-width: $breakpoints-md) {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  }
+
+  .thanks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0.75rem 0;
+    border-radius: 10px;
+    cursor: pointer;
+		animation: thank 8s linear;
+
+    @media screen and (max-width: $breakpoints-md) {
+      font-size: 16px;
+      font-weight: 700;
+      animation-name: none;
+    }
+  }
+
+  @media screen and (max-width: $breakpoints-sm) {
+    padding: 0 16px 48px;
+    width: calc(100vw - 32px);
+    flex-direction: column;
+  }
+}
+
+.linkList {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+	flex-direction: column;
+	margin: 40px;
+  padding: 40px 0 28px;
+
+  .linkCol {
+    display: flex;
+    flex-direction: column;
+    max-width: 220px;
+    width: 100%;
+  }
+
+  .linkTitle {
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 16px;
+
+    svg {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    @media screen and (max-width: $breakpoints-sm) {
+      font-size: 12px;
+      line-height: 12px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .linkItem {
+    font-size: 18px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 16px;
+    transition: .3s ease;
+    position: relative;
+    left: 0;
+		justify-content: start;
+
+    &:hover {
+      color: #fff;
+      left: 6px;
+    }
+
+    @media screen and (max-width: $breakpoints-md) {
+      font-size: 16px;
+      line-height: 28px;
+      display: flex;
+    }
+
+    @media screen and (max-width: $breakpoints-sm) {
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+	@media screen and (max-width: $breakpoints-lg) {
+		padding: 32px 0 16px;
+	}
+
+	@media screen and (max-width: $breakpoints-md) {
+		width: 100%;
+		padding: 32px 0 16px;
+		gap: 16px;
+	}
+
+	@media screen and (max-width: $breakpoints-sm) {
+		width: 100%;
+		padding: 32px 4px 16px;
+		gap: 5px;
+    margin: 0;
+	}
+}
+
+@mixin animation-mixin($name, $form, $to) {
+	@keyframes #{$name} {
+		0% { transform: scale($form); }
+    100% { transform: scale($to); }
+	}
+}
+
+@include animation-mixin(thank, 0.9, 1.4)
