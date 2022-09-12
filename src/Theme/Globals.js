@@ -23,7 +23,7 @@ export const Section = styled.section`
   }
 `
 
-export const SectionTitle = styled.h2`
+export const SectionTitle = styled.h1`
   font-weight: 800;
   font-size: ${(props) => props.main ? '65px' : '56px'};
   line-height: ${(props) => props.main ? '72px' : '56px'};
@@ -166,15 +166,15 @@ export const SecondaryBtn = styled.button`
 `
 
 export const ButtonBack = styled.div`
-  width: ${({ alt }) => alt ? '150px' : '262px'};
-  height: ${({ alt }) => alt ? '52px' : '64px'};
+  width: ${({ alt }) => alt ? '262px' : '262px'};
+  height: ${({ alt }) => alt ? '64px' : '64px'};
   border-radius: 50px;
   font-size: ${({ alt }) => alt ? '20px' : '24px'};
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: ${({ alt, form }) => (alt || form) ? '0' : '0 0 80px'};
+  margin: ${({ form }) => (!form) ? '0' : '0 0 80px'};
   color: #fff;
   background: ${({ alt }) => alt ? 'linear-gradient(270deg, #ff622e 0%, #B133FF 100%)' : 'linear-gradient(270deg, #00DBD8 0%, #B133FF 100%)'};
   cursor: pointer;
@@ -187,7 +187,7 @@ export const ButtonBack = styled.div`
     width: ${({ alt }) => alt ? '150px' : '184px'};
     height: ${({ alt }) => alt ? '52px' : '48px'};
     font-size: ${({ alt }) => alt ? '20px' : '16px'};
-    margin-bottom: ${({ alt }) => alt ? '0' : '64px'};
+    margin-bottom: 0;
   }
 
   @media screen and (max-width: 640px) {

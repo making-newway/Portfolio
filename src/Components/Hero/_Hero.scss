@@ -3,6 +3,39 @@
 .leftSec {
   width: 100%;
 
+  .heroBut {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media screen and (max-width: $breakpoints-sm) {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+
+      div, a {
+        width: 48%;
+
+        div {
+            width: 100%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $breakpoints-md) {
+      div, a {
+        width: 48%;
+        margin-bottom: 64px;
+
+        div {
+          width: 100%;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
   @media screen and (max-width: $breakpoints-sm) {
     width: 80%;
     display: flex;

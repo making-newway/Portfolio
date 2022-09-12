@@ -185,7 +185,7 @@
 @mixin animation-mixin($name, $form, $to) {
 	@keyframes #{$name} {
 		0% { transform: scale($form); }
-    100% { transform: scale($to); }
+        100% { transform: scale($to); }
 	}
 }
 
